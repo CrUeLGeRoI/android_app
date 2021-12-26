@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 textView.setText(button3.getText());
+                Log.i("blue_button", "Button BLUE pressed");
                 currentLayout.setBackgroundResource(R.color.blue);
 
             }
@@ -91,11 +92,22 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        button8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textView.setText(button8.getText());
+                currentLayout.setBackgroundResource(R.color.yellow);
+
+            }
+        });
     }
 
     public void reset(View view) {
         currentLayout = (RelativeLayout) findViewById(R.id.main_layout);
         textView.setText(R.string.hello);
+        Log.i("Hello_world", "Hello pressed");
         currentLayout.setBackgroundResource(R.color.white);
     }
+
+
 }
