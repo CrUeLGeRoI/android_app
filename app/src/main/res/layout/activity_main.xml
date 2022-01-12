@@ -52,7 +52,8 @@
         android:layout_alignParentLeft="true"
         android:layout_centerInParent="true"
         android:backgroundTint="@color/green"
-        android:text="@string/button4" />
+        android:text="@string/button4"
+        app:backgroundTint="@color/green" />
 
     <Button
         android:id="@+id/button5"
@@ -90,7 +91,7 @@
         android:text="@string/button8" />
 
     <Button
-        android:id="@+id/transition"
+        android:id="@+id/transition_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
