@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private RelativeLayout currentLayout;
@@ -101,14 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-        button8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textView.setText(button8.getText());
-                currentLayout.setBackgroundResource(R.color.yellow);
-
-            }
-        });
         transition.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -116,8 +110,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
+        Gen gen = new Gen(5, 759867894783946.87436784668);
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add(gen.sum());
+        Log.i("###Gen", arrayList.toString());
 
         //end
     }
@@ -130,5 +126,38 @@ public class MainActivity extends AppCompatActivity {
         currentLayout.setBackgroundResource(R.color.white);
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Log.i("LifeActivity###", "onStart");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.i("LifeActivity###", "onResume");
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.i("LifeActivity###", "onStop");
+        textView.setText("World!!!!!!!!");
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Log.i("LifeActivity###", "onRestart");
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.i("LifeActivity###", "OnCreate");
+    }
 
 }
