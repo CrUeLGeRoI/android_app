@@ -3,22 +3,24 @@ package com.example.tutorial;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private LinearLayout currentLayout;
     private Button button1, button2, button3, button4, button5, button6, button7, button8;
     private FloatingActionButton transition;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,19 +43,10 @@ public class MainActivity extends AppCompatActivity {
         //Layouts
         currentLayout = findViewById(R.id.main_layout);
 
-
-        //Buttons
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                textView.setText(button1.getText());
-                currentLayout.setBackgroundResource(R.color.black);
-            }
+        button1.setOnClickListener(v -> {
+            textView.setText(button1.getText());
+            currentLayout.setBackgroundResource(R.color.black);
         });
-
-
-
-
         button2.setOnClickListener(v -> {
             textView.setText(button2.getText());
             currentLayout.setBackgroundResource(R.color.orange_yellow);
@@ -96,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
         //end
     }
+
 
     public void reset(View view) {
         currentLayout = (LinearLayout) findViewById(R.id.main_layout);
