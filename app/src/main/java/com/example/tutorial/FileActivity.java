@@ -12,24 +12,16 @@ import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.ScrollView;
-import android.widget.TextView;
-
-import java.math.BigInteger;
 
 public class FileActivity extends AppCompatActivity {
     private Button button;
-    private ProgressBar progressBar;
-    private EditText editText;
-    private TextView textView;
-    private BigInteger res;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_file);
+
 
         button = findViewById(R.id.calc_btn);
         progressBar = findViewById(R.id.progress_bar);
