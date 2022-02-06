@@ -46,6 +46,11 @@ public class FileActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        try {
+                            Thread.sleep(1000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                         progressBar.setVisibility(View.INVISIBLE);
                         textView.setText(res + "");
                     }
