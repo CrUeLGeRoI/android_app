@@ -17,6 +17,8 @@ import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 import java.math.BigInteger;
 
 public class FileActivity extends AppCompatActivity {
@@ -25,6 +27,7 @@ public class FileActivity extends AppCompatActivity {
     private EditText editText;
     private TextView textView;
     private BigInteger res;
+    private FloatingActionButton transition;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +38,8 @@ public class FileActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.result_view);
+        transition = findViewById(R.id.transition_button_sensor);
+
         textView.setMovementMethod(new ScrollingMovementMethod());
 
 
@@ -71,6 +76,10 @@ public class FileActivity extends AppCompatActivity {
                     thread.start();
                 }
             }
+        });
+        transition.setOnClickListener(v -> {
+            Intent intent = new Intent(".SensorActivity");
+            startActivity(intent);
         });
     }
     public static BigInteger getFactorial(int f) {
