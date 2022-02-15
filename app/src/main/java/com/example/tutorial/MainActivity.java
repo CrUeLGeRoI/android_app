@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private LinearLayout currentLayout;
     private Button button1, button2, button3, button4, button5, button6, button7, button8;
-    private FloatingActionButton transition;
+    private FloatingActionButton transition, transition2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
         transition = findViewById(R.id.transition_button);
+        transition2 = findViewById(R.id.transition_button2);
 
         //Layouts
         currentLayout = findViewById(R.id.main_layout);
@@ -84,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
         });
         transition.setOnClickListener(v -> {
             Intent intent = new Intent(".FileActivity");
+            startActivity(intent);
+        });
+        transition2.setOnClickListener(v -> {
+            Intent intent = new Intent(".FragmentActivity");
             startActivity(intent);
         });
 

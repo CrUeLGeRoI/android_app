@@ -9,4 +9,7 @@
     <string name="button6">6</string>
     <string name="button7">7</string>
     <string name="button8">8</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_cat_fragment">Hello cat fragment</string>
 </resources>

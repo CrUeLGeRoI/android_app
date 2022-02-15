@@ -7,6 +7,7 @@
     android:id="@+id/sensorLayout"
     tools:context=".SensorActivity">
 
+
     <TextView
         android:id="@+id/sensorTextView"
         android:layout_width="wrap_content"
