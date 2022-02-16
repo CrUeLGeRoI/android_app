@@ -20,7 +20,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private LinearLayout currentLayout;
     private Button button1, button2, button3, button4, button5, button6, button7, button8;
-    private FloatingActionButton transition, transition2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,25 +37,21 @@ public class MainActivity extends AppCompatActivity {
         button6 = findViewById(R.id.button6);
         button7 = findViewById(R.id.button7);
         button8 = findViewById(R.id.button8);
-        transition = findViewById(R.id.transition_button);
-        transition2 = findViewById(R.id.transition_button2);
 
         //Layouts
         currentLayout = findViewById(R.id.main_layout);
 
         button1.setOnClickListener(v -> {
-            textView.setText(button1.getText());
-            currentLayout.setBackgroundResource(R.color.black);
+            Intent intent = new Intent(".FileActivity");
+            startActivity(intent);
         });
         button2.setOnClickListener(v -> {
-            textView.setText(button2.getText());
-            currentLayout.setBackgroundResource(R.color.orange_yellow);
-
+            Intent intent = new Intent(".SensorActivity");
+            startActivity(intent);
         });
         button3.setOnClickListener(v -> {
-            textView.setText(button3.getText());
-            currentLayout.setBackgroundResource(R.color.blue);
-
+            Intent intent = new Intent(".FragmentActivity");
+            startActivity(intent);
         });
         button4.setOnClickListener(v -> {
             textView.setText(button4.getText());
@@ -82,14 +77,6 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(button8.getText());
             currentLayout.setBackgroundResource(R.color.yellow);
 
-        });
-        transition.setOnClickListener(v -> {
-            Intent intent = new Intent(".FileActivity");
-            startActivity(intent);
-        });
-        transition2.setOnClickListener(v -> {
-            Intent intent = new Intent(".FragmentActivity");
-            startActivity(intent);
         });
 
         //end

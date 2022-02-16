@@ -28,6 +28,7 @@ public class FileActivity extends AppCompatActivity {
     private TextView textView;
     private BigInteger res;
     private FloatingActionButton transition;
+    private short threadsNeededToBeCreated;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,24 +39,26 @@ public class FileActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progress_bar);
         editText = findViewById(R.id.editText);
         textView = findViewById(R.id.result_view);
-        transition = findViewById(R.id.transition_button_sensor);
 
         textView.setMovementMethod(new ScrollingMovementMethod());
+
 
 
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
+                try {
+                    Thread.sleep(400);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 String editTextResult = editText.getText().toString();
-                res = getFactorial(Integer.parseInt(editTextResult.toString()));
+                int editTextResultInt = Integer.parseInt(editTextResult);
+                //TODO: HANDLER как только хэндлер выполнит часть работы с факториалом то он добавит этот результат в бигинтеджер
+                res = getFactorial(editTextResultInt);
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        try {
-                            Thread.sleep(1000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
                         progressBar.setVisibility(View.INVISIBLE);
                         textView.setText(res + "");
                     }
@@ -67,19 +70,15 @@ public class FileActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public synchronized void onClick(View v) {
+            public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
                 if (thread.getState() == NEW){
-                    thread.run();
-                }
-                if (thread.getState() != NEW){
                     thread.start();
                 }
+                else{
+                    thread.run();
+                }
             }
-        });
-        transition.setOnClickListener(v -> {
-            Intent intent = new Intent(".SensorActivity");
-            startActivity(intent);
         });
     }
     public static BigInteger getFactorial(int f) {

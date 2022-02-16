@@ -1,9 +1,9 @@
 <resources>
     <string name="app_name">Colors</string>
     <string name="hello">Hello world!</string>
-    <string name="button">1</string>
-    <string name="button2">2</string>
-    <string name="button3">3</string>
+    <string name="button">File Act</string>
+    <string name="button2">Sensor Act</string>
+    <string name="button3">Frag Act</string>
     <string name="button4">4</string>
     <string name="button5">5</string>
     <string name="button6">6</string>
