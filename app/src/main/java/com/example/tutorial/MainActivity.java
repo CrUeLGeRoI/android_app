@@ -58,9 +58,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         button5.setOnClickListener(v -> {
-            textView.setText(button5.getText());
-            currentLayout.setBackgroundResource(R.color.purple_200);
-
+            Intent intent = new Intent(".CircleActivity");
+            startActivity(intent);
         });
         button6.setOnClickListener(v -> {
             textView.setText(button6.getText());

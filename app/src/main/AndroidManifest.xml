@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial">
         <activity
+            android:name=".CircleActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".CircleActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".DrawingActivity"
             android:exported="true">
             <intent-filter>
