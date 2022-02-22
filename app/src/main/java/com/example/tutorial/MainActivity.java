@@ -54,9 +54,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         button4.setOnClickListener(v -> {
-            textView.setText(button4.getText());
-            currentLayout.setBackgroundResource(R.color.green);
-
+            Intent intent = new Intent(".DrawingActivity");
+            startActivity(intent);
         });
         button5.setOnClickListener(v -> {
             textView.setText(button5.getText());
