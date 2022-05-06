@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalculatorActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <EditText
+            android:id="@+id/editTextFirstNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="8"
+            android:inputType="textPersonName"
+            android:hint="@string/first_num"
+            android:layout_marginTop="50px"
+            android:layout_marginLeft="20px"
+            />
+
+        <EditText
+            android:id="@+id/editTextSecondNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:ems="8"
+            android:inputType="textPersonName"
+            android:hint="@string/second_num"
+            android:layout_marginTop="50px"
+            android:layout_marginRight="20px"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonsLayout"
+            android:layout_marginTop="0.5in">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/radioButtonPlus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="110px"
+                    android:text="@string/plus" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMinus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/radioButtonPlus"
+                    android:layout_marginLeft="110px"
+                    android:text="@string/minus" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonDivide"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/radioButtonMinus"
+                    android:layout_marginLeft="110px"
+                    android:text="@string/divide" />
+
+                <RadioButton
+                    android:id="@+id/radioButtonMultiply"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/radioButtonDivide"
+                    android:layout_marginLeft="110px"
+                    android:text="@string/multiply" />
+
+            </RadioGroup>
+
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonCalculateResult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/buttonsLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Button" />
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="50dp"
+            android:gravity="center_horizontal" />
+
+
+
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

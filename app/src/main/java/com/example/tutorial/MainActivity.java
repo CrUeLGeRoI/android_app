@@ -62,21 +62,17 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         });
         button6.setOnClickListener(v -> {
-            textView.setText(button6.getText());
-            currentLayout.setBackgroundResource(R.color.red);
-
+            Intent intent = new Intent(".CalculatorActivity");
+            startActivity(intent);
         });
         button7.setOnClickListener(v -> {
-            textView.setText(button7.getText());
-            currentLayout.setBackgroundResource(R.color.orange);
-
+            Intent intent = new Intent(".RecyclerActivity");
+            startActivity(intent);
         });
         button8.setOnClickListener(v -> {
             textView.setText(button8.getText());
             currentLayout.setBackgroundResource(R.color.yellow);
-
         });
-
         //end
     }
 

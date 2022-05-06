@@ -1,4 +1,7 @@
 <resources>
+
+    <!--    Main act-->
+
     <string name="app_name">Colors</string>
     <string name="hello">Hello world!</string>
     <string name="button">File Act</string>
@@ -6,10 +9,23 @@
     <string name="button3">Frag Act</string>
     <string name="button4">Draw Act</string>
     <string name="button5">Circle Act</string>
-    <string name="button6">6</string>
-    <string name="button7">7</string>
+    <string name="button6">Calc Act</string>
+    <string name="button7">Recycle Act</string>
     <string name="button8">8</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="hello_cat_fragment">Hello cat fragment</string>
+
+    <!--    Cat frag-->
+    <string name="hello_cat_fragment">Hello cat fragment!</string>
+
+    <!--    Blank frag-->
+    <string name="hello_blank_fragment">Hello blank fragment!</string>
+
+
+    <!--    Calc act-->
+
+    <string name="first_num">First number</string>
+    <string name="second_num">Second number</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="divide">/</string>
+    <string name="multiply">*</string>
 </resources>
