@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial">
         <activity
+            android:name=".RecyclerActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".RecyclerActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CalculatorActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".CalculatorActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".CircleActivity"
             android:exported="true">
             <intent-filter>
