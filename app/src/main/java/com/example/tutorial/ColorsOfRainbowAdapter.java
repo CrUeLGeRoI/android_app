@@ -7,6 +7,7 @@ import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -38,14 +39,11 @@ public class ColorsOfRainbowAdapter extends RecyclerView.Adapter<ColorsOfRainbow
         short number = colorsOfRainbowArrayList.get(position).getNumber();
         String colorName = colorsOfRainbowArrayList.get(position).getColorName();
         int color = colorsOfRainbowArrayList.get(position).getColor();
-//        Drawable unwrappedDrawable = AppCompatResources.getDrawable(holder.constraintLayout.getContext(), R.drawable.item_border);
-//        Drawable wrappedDrawable = DrawableCompat.wrap(unwrappedDrawable);
 
 
         holder.numTextView.setText(number + "");
         holder.colorNameTextView.setText(colorName);
-        holder.constraintLayout.setBackgroundColor(color);
-//        DrawableCompat.setTint(wrappedDrawable, color);
+        holder.layout.setBackgroundColor(color);
     }
 
     @Override
@@ -56,13 +54,13 @@ public class ColorsOfRainbowAdapter extends RecyclerView.Adapter<ColorsOfRainbow
     public class MyViewHolder extends RecyclerView.ViewHolder{
         private TextView numTextView;
         private TextView colorNameTextView;
-        private ConstraintLayout constraintLayout;
+        private RelativeLayout layout;
 
         public MyViewHolder(@NonNull View view) {
             super(view);
             numTextView = view.findViewById(R.id.numTextView);
             colorNameTextView = view.findViewById(R.id.colorNameTextView);
-            constraintLayout = view.findViewById(R.id.constraintLayoutRecyclerView);
+            layout = view.findViewById(R.id.layoutRecyclerView);
         }
     }
 }
