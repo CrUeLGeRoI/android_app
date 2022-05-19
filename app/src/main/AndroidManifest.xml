@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial">
         <activity
-            android:name=".RecyclerActivity"
+            android:name=".activities.CreatedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RecyclerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".RecyclerActivity" />
@@ -19,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CalculatorActivity"
+            android:name=".activities.CalculatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CalculatorActivity" />
@@ -28,7 +31,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CircleActivity"
+            android:name=".activities.CircleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CircleActivity" />
@@ -37,7 +40,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DrawingActivity"
+            android:name=".activities.DrawingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".DrawingActivity" />
@@ -46,7 +49,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FragmentActivity"
+            android:name=".activities.FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FragmentActivity" />
@@ -55,7 +58,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SensorActivity"
+            android:name=".activities.SensorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".SensorActivity" />
@@ -64,7 +67,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".FileActivity"
+            android:name=".activities.FileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FileActivity" />
@@ -73,7 +76,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

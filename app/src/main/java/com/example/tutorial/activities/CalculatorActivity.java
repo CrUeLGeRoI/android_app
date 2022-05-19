@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -18,6 +18,8 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tutorial.R;
 
 public class CalculatorActivity extends AppCompatActivity {
 

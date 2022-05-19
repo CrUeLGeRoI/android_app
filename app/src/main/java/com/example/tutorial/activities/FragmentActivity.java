@@ -1,9 +1,11 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+
+import com.example.tutorial.R;
 
 public class FragmentActivity extends AppCompatActivity {
     private Button button_blank, button_cat;
