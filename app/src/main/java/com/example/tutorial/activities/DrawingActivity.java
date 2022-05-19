@@ -1,9 +1,11 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.RelativeLayout;
+
+import com.example.tutorial.DrawView;
 
 public class DrawingActivity extends AppCompatActivity {
 

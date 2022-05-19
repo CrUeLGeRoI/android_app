@@ -1,8 +1,10 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.tutorial.MovementView;
 
 public class CircleActivity extends AppCompatActivity {
 

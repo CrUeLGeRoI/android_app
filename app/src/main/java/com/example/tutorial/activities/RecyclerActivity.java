@@ -1,4 +1,6 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
+
+import static android.content.ContentValues.TAG;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -6,12 +8,18 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+
+import com.example.tutorial.ColorsOfRainbow;
+import com.example.tutorial.ColorsOfRainbowAdapter;
+import com.example.tutorial.R;
 
 import java.util.ArrayList;
 
-public class RecyclerActivity extends AppCompatActivity {
+public class RecyclerActivity extends AppCompatActivity implements ColorsOfRainbowAdapter.OnAdapterClickListener{
 
     private ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList;
     private RecyclerView recyclerView;
@@ -45,9 +53,17 @@ public class RecyclerActivity extends AppCompatActivity {
         }
 
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        ColorsOfRainbowAdapter adapter = new ColorsOfRainbowAdapter(colorsOfRainbowArrayList);
+        ColorsOfRainbowAdapter adapter = new ColorsOfRainbowAdapter(colorsOfRainbowArrayList, this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onAdapterClick(int position) {
+        Log.d(TAG, "onAdapterClick: clicked");
+        Intent intent = new Intent(this, CreatedActivity.class);
+        intent.putExtra("COLOR_OF_ELEMENT", colorsOfRainbowArrayList.get(position).getColor());
+        startActivity(intent);
     }
 }

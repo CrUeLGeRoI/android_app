@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,6 +13,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
+import com.example.tutorial.R;
 
 import java.math.BigInteger;
 

@@ -22,16 +22,18 @@ import java.util.ArrayList;
 public class ColorsOfRainbowAdapter extends RecyclerView.Adapter<ColorsOfRainbowAdapter.MyViewHolder> {
 
     private ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList;
+    private OnAdapterClickListener mOnAdapterListener;
 
-    public ColorsOfRainbowAdapter(ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList) {
+    public ColorsOfRainbowAdapter(ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList, OnAdapterClickListener onAdapterClickListener) {
         this.colorsOfRainbowArrayList = colorsOfRainbowArrayList;
+        this.mOnAdapterListener = onAdapterClickListener;
     }
 
     @NonNull
     @Override
     public ColorsOfRainbowAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items, parent, false);
-        return new MyViewHolder(itemView);
+        return new MyViewHolder(itemView, mOnAdapterListener);
     }
 
     @Override
@@ -51,16 +53,29 @@ public class ColorsOfRainbowAdapter extends RecyclerView.Adapter<ColorsOfRainbow
         return colorsOfRainbowArrayList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView numTextView;
-        private TextView colorNameTextView;
-        private RelativeLayout layout;
+    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView numTextView;
+        TextView colorNameTextView;
+        RelativeLayout layout;
+        OnAdapterClickListener onAdapterClickListener;
 
-        public MyViewHolder(@NonNull View view) {
+        public MyViewHolder(@NonNull View view, OnAdapterClickListener onAdapterClickListener) {
             super(view);
             numTextView = view.findViewById(R.id.numTextView);
             colorNameTextView = view.findViewById(R.id.colorNameTextView);
             layout = view.findViewById(R.id.layoutRecyclerView);
+
+
+            view.setOnClickListener(this);
+            this.onAdapterClickListener = onAdapterClickListener;
         }
+
+        @Override
+        public void onClick(View v) {
+            onAdapterClickListener.onAdapterClick(getAdapterPosition());
+        }
+    }
+    public interface OnAdapterClickListener{
+        void onAdapterClick(int position);
     }
 }

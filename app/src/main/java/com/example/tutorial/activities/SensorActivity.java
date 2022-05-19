@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.activities;
 
 import static java.lang.Integer.toHexString;
 
@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.tutorial.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SensorActivity extends AppCompatActivity implements SensorEventListener {
