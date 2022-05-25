@@ -14,7 +14,7 @@ import android.util.Log;
 import android.widget.TextView;
 
 import com.example.tutorial.ColorsOfRainbow;
-import com.example.tutorial.ColorsOfRainbowAdapter;
+import com.example.tutorial.ui.ColorsOfRainbowAdapter;
 import com.example.tutorial.R;
 
 import java.util.ArrayList;

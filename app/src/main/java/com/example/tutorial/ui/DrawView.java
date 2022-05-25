@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;

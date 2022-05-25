@@ -3,9 +3,8 @@ package com.example.tutorial.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.RelativeLayout;
 
-import com.example.tutorial.DrawView;
+import com.example.tutorial.ui.DrawView;
 
 public class DrawingActivity extends AppCompatActivity {
 
