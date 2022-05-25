@@ -52,5 +52,12 @@ public class NotesContract {
 
         // Одна заметка
         public static final String URI_TYPE_NOTE_ITEM = "vnd.android.cursor.item/vnd.example.tutorial";
+
+        public static final String[] LIST_PROJECTION = {
+                _ID,
+                COLUMN_TITLE,
+                COLUMN_CREATED_TS,
+                COLUMN_UPDATED_TS
+        };
     }
 }

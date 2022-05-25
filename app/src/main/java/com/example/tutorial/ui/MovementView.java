@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.ui;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -9,7 +9,6 @@ import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 
 public class MovementView extends SurfaceView implements SurfaceHolder.Callback {
     private int xPos;

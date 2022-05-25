@@ -1,6 +1,7 @@
 package com.example.tutorial.db;
 
 import android.content.ContentProvider;
+import android.content.ContentUris;
 import android.content.ContentValues;
 import android.content.UriMatcher;
 import android.database.Cursor;
@@ -96,6 +97,14 @@ public class NotesProvider extends ContentProvider {
                 long rowId = db.insert(NotesContract.Notes.TABLE_NAME,
                         null,
                         values);
+
+                if (rowId > 0) {
+                    Uri noteUri = ContentUris.withAppendedId(NotesContract.Notes.URI, rowId);
+                    getContext().getContentResolver().notifyChange(uri, null);
+                    return noteUri;
+                }
+
+                return null;
 
             default:
                 return null;

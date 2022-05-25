@@ -2,8 +2,12 @@ package com.example.tutorial.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +17,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.tutorial.R;
+import com.example.tutorial.db.NotesContract;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -74,9 +79,37 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(button8.getText());
             currentLayout.setBackgroundResource(R.color.yellow);
         });
+
+        insert();
+        select();
         //end
     }
 
+    private void insert() {
+        ContentResolver contentResolver = getContentResolver();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(NotesContract.Notes.COLUMN_TITLE, "Заголовок заметки");
+        contentValues.put(NotesContract.Notes.COLUMN_NOTE, "Текст заметки");
+        contentValues.put(NotesContract.Notes.COLUMN_CREATED_TS, System.currentTimeMillis());
+        contentValues.put(NotesContract.Notes.COLUMN_UPDATED_TS, System.currentTimeMillis());
+
+        Uri uri = contentResolver.insert(NotesContract.Notes.URI, contentValues);
+        Log.i("DATABASE", "URI: " + uri);
+    }
+
+    private void select() {
+        ContentResolver contentResolver = getContentResolver();
+        Cursor cursor = contentResolver.query(
+                NotesContract.Notes.URI, // URI
+                NotesContract.Notes.LIST_PROJECTION, // Столбцы
+                null, // Параметры выборки
+                null, // Аргументы выборки
+                null // Сортировка по умолчанию
+        );
+        Log.i("DATABASE", "Count: " + cursor.getCount());
+        cursor.close();
+    }
 
     public void reset(View view) {
         currentLayout = (LinearLayout) findViewById(R.id.main_layout);

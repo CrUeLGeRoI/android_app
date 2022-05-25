@@ -1,4 +1,4 @@
-package com.example.tutorial;
+package com.example.tutorial.ui;
 
 import android.graphics.Canvas;
 import android.view.SurfaceHolder;

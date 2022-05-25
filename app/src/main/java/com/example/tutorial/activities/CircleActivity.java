@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.example.tutorial.MovementView;
+import com.example.tutorial.ui.MovementView;
 
 public class CircleActivity extends AppCompatActivity {
 
