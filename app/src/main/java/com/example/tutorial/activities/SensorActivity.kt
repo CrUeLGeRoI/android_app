@@ -1,77 +1,56 @@
-package com.example.tutorial.activities;
+package com.example.tutorial.activities
 
-import static java.lang.Integer.toHexString;
+import android.graphics.Color
+import android.hardware.Sensor
+import androidx.appcompat.app.AppCompatActivity
+import android.hardware.SensorEventListener
+import android.hardware.SensorManager
+import android.widget.TextView
+import android.widget.RelativeLayout
+import android.os.Bundle
+import com.example.tutorial.R
+import android.hardware.SensorEvent
+import android.util.Log
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.graphics.Color;
-import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
-import android.hardware.SensorManager;
-import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
-
-import com.example.tutorial.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-public class SensorActivity extends AppCompatActivity implements SensorEventListener {
-    private SensorManager sensorManager;
-    private Sensor sensor;
-    private TextView textView;
-    private double currentLux;
-    private double maxLux;
-    private RelativeLayout layout;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sensor);
-
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        textView = findViewById(R.id.sensorTextView);
-        layout = findViewById(R.id.sensorLayout);
+class SensorActivity : AppCompatActivity(), SensorEventListener {
+    private var sensorManager: SensorManager? = null
+    private var sensor: Sensor? = null
+    private var textView: TextView? = null
+    private var currentLux = 0.0
+    private var maxLux = 0.0
+    private var layout: RelativeLayout? = null
 
 
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-        sensorManager.registerListener((SensorEventListener) this, sensor, SensorManager.SENSOR_DELAY_FASTEST);
-
-
-
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_sensor)
+        sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+        textView = findViewById(R.id.sensorTextView)
+        layout = findViewById(R.id.sensorLayout)
+        sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
+        sensorManager!!.registerListener(this as SensorEventListener, sensor, SensorManager.SENSOR_DELAY_FASTEST)
     }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (event.sensor.getType() == Sensor.TYPE_LIGHT) {
-            currentLux = event.values[0];
-            if (currentLux > maxLux)
-                maxLux = currentLux;
+    override fun onSensorChanged(event: SensorEvent) {
+        if (event.sensor.type == Sensor.TYPE_LIGHT) {
+            currentLux = event.values[0].toDouble()
+            if (currentLux > maxLux) maxLux = currentLux
         }
-        String color = "#" + toHexString((int) currentLux) + toHexString((int) maxLux) + toHexString((int) (Math.random() * 100));
-        Log.d("####", color);
-        if (color.length() == 7){
-            layout.setBackgroundColor(Color.parseColor(color));
+        var color = "#" + Integer.toHexString(currentLux.toInt()) + Integer.toHexString(maxLux.toInt()) + Integer.toHexString((Math.random() * 100).toInt())
+        Log.d("####", color)
+        if (color.length == 7) {
+            layout!!.setBackgroundColor(Color.parseColor(color))
+        } else if (color.length > 7) {
+            val decimal = color.length - 7
+            color = color.substring(0, color.length - decimal)
+            layout!!.setBackgroundColor(Color.parseColor(color))
         }
-        else if(color.length() > 7){
-            int decimal = color.length() - 7;
-            color = color.substring(0, color.length() - decimal);
-            layout.setBackgroundColor(Color.parseColor(color));
-        }
-        textView.setText(currentLux + "");
+        textView!!.text = currentLux.toString() + ""
     }
 
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        sensorManager.unregisterListener((SensorEventListener) this);
+    override fun onAccuracyChanged(sensor: Sensor, accuracy: Int) {}
+    override fun onPause() {
+        super.onPause()
+        sensorManager!!.unregisterListener(this as SensorEventListener)
     }
 }

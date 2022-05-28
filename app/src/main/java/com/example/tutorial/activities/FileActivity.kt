@@ -1,94 +1,64 @@
-package com.example.tutorial.activities;
+package com.example.tutorial.activities
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import com.example.tutorial.R
+import android.text.method.ScrollingMovementMethod
+import android.view.View
+import android.widget.*
+import com.example.tutorial.activities.FileActivity
+import java.math.BigInteger
+
+class FileActivity : AppCompatActivity() {
+    private var button: Button? = null
+    private var progressBar: ProgressBar? = null
+    private var editText: EditText? = null
+    private var textView: TextView? = null
+    private var res: BigInteger? = null
 
 
-import androidx.appcompat.app.AppCompatActivity;
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_file)
+        button = findViewById(R.id.calc_btn)
+        progressBar = findViewById(R.id.progress_bar)
+        editText = findViewById(R.id.editText)
+        textView = findViewById(R.id.result_view)
+        textView?.movementMethod = ScrollingMovementMethod()
+        button?.setOnClickListener {
+            progressBar?.visibility = View.VISIBLE
+            Thread {
+                var prevEditTextResult = ""
+                var editTextResult = editText?.text.toString()
 
-import android.os.Bundle;
-import android.os.Handler;
-import android.text.method.ScrollingMovementMethod;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
-import android.widget.Toast;
-
-
-import com.example.tutorial.R;
-
-import java.math.BigInteger;
-
-public class FileActivity extends AppCompatActivity {
-    private Button button;
-    private ProgressBar progressBar;
-    private EditText editText;
-    private TextView textView;
-    private BigInteger res;
-    private Handler handler;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_file);
-
-        button = findViewById(R.id.calc_btn);
-        progressBar = findViewById(R.id.progress_bar);
-        editText = findViewById(R.id.editText);
-        textView = findViewById(R.id.result_view);
-
-        textView.setMovementMethod(new ScrollingMovementMethod());
-
-        handler = new Handler();
-
-
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String prevEditTextResult = "";
-                        String editTextResult = editText.getText().toString();
-                        textView.setText("");
-
-                        if(prevEditTextResult == editTextResult){
-                            handler.post(new Runnable() {
-                                @Override
-                                public void run() {
-                                    Toast toast;
-                                    progressBar.setVisibility(View.VISIBLE);
-                                    toast = Toast.makeText(getBaseContext(), "Already calculated this number", Toast.LENGTH_SHORT);
-                                    toast.show();
-                                }
-                            });
-                        }
-                        else prevEditTextResult = editTextResult;
-
-                        int editTextResultInt = Integer.parseInt(editTextResult);
-
-                        res = getFactorial(editTextResultInt);
-
-                        handler.post(new Runnable() {
-                            @Override
-                            public void run() {
-                                progressBar.setVisibility(View.INVISIBLE);
-                                textView.setText(res.toString());
-                            }
-                        });
+                textView?.text = ""
+                if (prevEditTextResult == editTextResult) {
+                    Handler(Looper.getMainLooper()).post {
+                        progressBar?.visibility = View.VISIBLE
+                        Toast.makeText(applicationContext, "Already calculated this number", Toast.LENGTH_SHORT)
                     }
-                }).run();
-            }
-        });
-    }
-    public static BigInteger getFactorial(int f) {
-        BigInteger result = new BigInteger("1");
-        BigInteger bigInteger;
-        for (int i = 1; i <= f; i++) {
-            bigInteger = new BigInteger(i + "");
-            result = result.multiply(bigInteger);
+                } else prevEditTextResult = editTextResult
+
+                var editTextResultInt = editTextResult.toInt()
+
+                res = getFactorial(editTextResultInt)
+                Handler(Looper.getMainLooper()).post {
+                    progressBar?.visibility = View.INVISIBLE
+                    textView?.text = res.toString()
+                }
+            }.run()
         }
-        return result;
+    }
+
+    private fun getFactorial(f: Int): BigInteger {
+        var result = BigInteger("1")
+        var bigInteger: BigInteger?
+        for (i in 1..f) {
+            bigInteger = BigInteger(i.toString() + "")
+            result = result.multiply(bigInteger)
+        }
+        return result
     }
 }
