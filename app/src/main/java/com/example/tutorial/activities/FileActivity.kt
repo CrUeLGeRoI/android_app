@@ -22,11 +22,14 @@ class FileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_file)
+
         button = findViewById(R.id.calc_btn)
         progressBar = findViewById(R.id.progress_bar)
         editText = findViewById(R.id.editText)
+
         textView = findViewById(R.id.result_view)
         textView?.movementMethod = ScrollingMovementMethod()
+
         button?.setOnClickListener {
             progressBar?.visibility = View.VISIBLE
             Thread {
@@ -50,6 +53,7 @@ class FileActivity : AppCompatActivity() {
                 }
             }.run()
         }
+
     }
 
     private fun getFactorial(f: Int): BigInteger {

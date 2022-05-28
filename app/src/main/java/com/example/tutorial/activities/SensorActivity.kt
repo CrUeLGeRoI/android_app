@@ -25,9 +25,13 @@ class SensorActivity : AppCompatActivity(), SensorEventListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sensor)
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
+
         textView = findViewById(R.id.sensorTextView)
+
         layout = findViewById(R.id.sensorLayout)
+
         sensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_LIGHT)
+
         sensorManager!!.registerListener(this as SensorEventListener, sensor, SensorManager.SENSOR_DELAY_FASTEST)
     }
 

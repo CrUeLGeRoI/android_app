@@ -14,70 +14,60 @@ import android.widget.Button
 import com.example.tutorial.db.NotesContract
 
 class MainActivity : AppCompatActivity() {
+
     private var textView: TextView? = null
     private var currentLayout: LinearLayout? = null
-    private var button1: Button? = null
-    private var button2: Button? = null
-    private var button3: Button? = null
-    private var button4: Button? = null
-    private var button5: Button? = null
-    private var button6: Button? = null
-    private var button7: Button? = null
-    private var button8: Button? = null
+    private var mIntent:Intent? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        //TextViews
+        //Initializing
+
         textView = findViewById(R.id.hello_world)
-
-        //Buttons
-        button1 = findViewById(R.id.button)
-        button2 = findViewById(R.id.button2)
-        button3 = findViewById(R.id.button3)
-        button4 = findViewById(R.id.button4)
-        button5 = findViewById(R.id.button5)
-        button6 = findViewById(R.id.button6)
-        button7 = findViewById(R.id.button7)
-        button8 = findViewById(R.id.button8)
-
-        //Layouts
         currentLayout = findViewById(R.id.main_layout)
-        button1?.setOnClickListener {
-            val intent = Intent(".FileActivity")
-            startActivity(intent)
-        }
-        button2?.setOnClickListener {
-            val intent = Intent(".SensorActivity")
-            startActivity(intent)
-        }
-        button3?.setOnClickListener {
-            val intent = Intent(".FragmentActivity")
-            startActivity(intent)
-        }
-        button4?.setOnClickListener {
-            val intent = Intent(".DrawingActivity")
-            startActivity(intent)
-        }
-        button5?.setOnClickListener {
-            val intent = Intent(".CircleActivity")
-            startActivity(intent)
-        }
-        button6?.setOnClickListener {
-            val intent = Intent(".CalculatorActivity")
-            startActivity(intent)
-        }
-        button7?.setOnClickListener {
-            val intent = Intent(".RecyclerActivity")
-            startActivity(intent)
-        }
-        button8?.setOnClickListener {
-            textView!!.text = button8?.text
-            currentLayout?.setBackgroundResource(R.color.yellow)
-        }
+
         insert()
         select()
         //end
+    }
+
+    fun onClickBtn(v: View?) {
+        when(v?.id){
+            R.id.button -> {
+                mIntent = Intent(".FileActivity")
+                startActivity(mIntent)
+            }
+            R.id.button2 -> {
+                mIntent = Intent(".SensorActivity")
+                startActivity(mIntent)
+            }
+            R.id.button3 -> {
+                mIntent = Intent(".FragmentActivity")
+                startActivity(mIntent)
+            }
+            R.id.button4 -> {
+                mIntent = Intent(".DrawingActivity")
+                startActivity(mIntent)
+            }
+            R.id.button5 -> {
+                mIntent = Intent(".CircleActivity")
+                startActivity(mIntent)
+            }
+            R.id.button6 -> {
+                mIntent = Intent(".CalculatorActivity")
+                startActivity(mIntent)
+            }
+            R.id.button7 -> {
+                mIntent = Intent(".RecyclerActivity")
+                startActivity(mIntent)
+            }
+            R.id.button8 -> {
+                textView!!.text = "8"
+                currentLayout?.setBackgroundResource(R.color.yellow)
+            }
+        }
     }
 
     private fun insert() {
@@ -136,4 +126,8 @@ class MainActivity : AppCompatActivity() {
         super.onDestroy()
         Log.i("LifeActivity###", "OnCreate")
     }
+
+
+
+
 }
