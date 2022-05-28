@@ -1,76 +1,60 @@
-package com.example.tutorial.ui;
+package com.example.tutorial.ui
 
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import com.example.tutorial.ColorsOfRainbow
+import com.example.tutorial.ui.ColorsOfRainbowAdapter.OnAdapterClickListener
+import androidx.recyclerview.widget.RecyclerView
+import com.example.tutorial.ui.ColorsOfRainbowAdapter.MyViewHolder
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.view.View
+import com.example.tutorial.R
+import android.widget.TextView
+import android.widget.RelativeLayout
+import java.util.ArrayList
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+class ColorsOfRainbowAdapter(private val colorsOfRainbowArrayList: ArrayList<ColorsOfRainbow>, private val mOnAdapterListener: OnAdapterClickListener) : RecyclerView.Adapter<MyViewHolder>() {
 
-import com.example.tutorial.ColorsOfRainbow;
-import com.example.tutorial.R;
-
-import java.util.ArrayList;
-
-public class ColorsOfRainbowAdapter extends RecyclerView.Adapter<ColorsOfRainbowAdapter.MyViewHolder> {
-
-    private ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList;
-    private OnAdapterClickListener mOnAdapterListener;
-
-    public ColorsOfRainbowAdapter(ArrayList<ColorsOfRainbow> colorsOfRainbowArrayList, OnAdapterClickListener onAdapterClickListener) {
-        this.colorsOfRainbowArrayList = colorsOfRainbowArrayList;
-        this.mOnAdapterListener = onAdapterClickListener;
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.list_items, parent, false)
+        return MyViewHolder(itemView, mOnAdapterListener)
     }
 
-    @NonNull
-    @Override
-    public ColorsOfRainbowAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_items, parent, false);
-        return new MyViewHolder(itemView, mOnAdapterListener);
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+
+        val number = colorsOfRainbowArrayList[position].number
+        val colorName = colorsOfRainbowArrayList[position].colorName
+        val color = colorsOfRainbowArrayList[position].color
+
+        holder.numTextView.text = number.toString() + ""
+        holder.colorNameTextView.text = colorName
+        holder.layout.setBackgroundColor(color)
     }
 
-    @Override
-    public void onBindViewHolder(@NonNull ColorsOfRainbowAdapter.MyViewHolder holder, int position) {
-        short number = colorsOfRainbowArrayList.get(position).getNumber();
-        String colorName = colorsOfRainbowArrayList.get(position).getColorName();
-        int color = colorsOfRainbowArrayList.get(position).getColor();
-
-
-        holder.numTextView.setText(number + "");
-        holder.colorNameTextView.setText(colorName);
-        holder.layout.setBackgroundColor(color);
+    override fun getItemCount(): Int {
+        return colorsOfRainbowArrayList.size
     }
 
-    @Override
-    public int getItemCount() {
-        return colorsOfRainbowArrayList.size();
-    }
+    inner class MyViewHolder(view: View, onAdapterClickListener: OnAdapterClickListener) : RecyclerView.ViewHolder(view), View.OnClickListener {
 
-    public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView numTextView;
-        TextView colorNameTextView;
-        RelativeLayout layout;
-        OnAdapterClickListener onAdapterClickListener;
+        var numTextView: TextView
+        var colorNameTextView: TextView
+        var layout: RelativeLayout
+        var onAdapterClickListener: OnAdapterClickListener
 
-        public MyViewHolder(@NonNull View view, OnAdapterClickListener onAdapterClickListener) {
-            super(view);
-            numTextView = view.findViewById(R.id.numTextView);
-            colorNameTextView = view.findViewById(R.id.colorNameTextView);
-            layout = view.findViewById(R.id.layoutRecyclerView);
-
-
-            view.setOnClickListener(this);
-            this.onAdapterClickListener = onAdapterClickListener;
+        override fun onClick(v: View) {
+            onAdapterClickListener.onAdapterClick(adapterPosition)
         }
 
-        @Override
-        public void onClick(View v) {
-            onAdapterClickListener.onAdapterClick(getAdapterPosition());
+        init {
+            numTextView = view.findViewById(R.id.numTextView)
+            colorNameTextView = view.findViewById(R.id.colorNameTextView)
+            layout = view.findViewById(R.id.layoutRecyclerView)
+            view.setOnClickListener(this)
+            this.onAdapterClickListener = onAdapterClickListener
         }
     }
-    public interface OnAdapterClickListener{
-        void onAdapterClick(int position);
+
+    interface OnAdapterClickListener {
+        fun onAdapterClick(position: Int)
     }
 }

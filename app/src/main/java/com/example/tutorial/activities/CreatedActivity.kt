@@ -1,33 +1,28 @@
-package com.example.tutorial.activities;
+package com.example.tutorial.activities
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import com.example.tutorial.R
+import android.content.Intent
+import android.util.Log
+import android.widget.RelativeLayout
+import com.example.tutorial.activities.CreatedActivity
 
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.util.Log;
-import android.widget.RelativeLayout;
-
-import com.example.tutorial.R;
-
-public class CreatedActivity extends AppCompatActivity {
-
-    private static final String TAG = "CreatedActivity";
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_created);
-
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        RelativeLayout layout = findViewById(R.id.createdActivityLayout);
-
-        if (bundle != null){
-            int color = bundle.getInt("COLOR_OF_ELEMENT");
-            layout.setBackgroundColor(color);
+class CreatedActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_created)
+        val intent = intent
+        val bundle = intent.extras
+        val layout = findViewById<RelativeLayout>(R.id.createdActivityLayout)
+        if (bundle != null) {
+            val color = bundle.getInt("COLOR_OF_ELEMENT")
+            layout.setBackgroundColor(color)
         }
+        Log.d(TAG, "onCreate: created")
+    }
 
-        Log.d(TAG, "onCreate: created");
+    companion object {
+        private const val TAG = "CreatedActivity"
     }
 }

@@ -30,7 +30,8 @@
             android:layout_marginTop="100dp"
             android:backgroundTint="@color/black"
             android:text="@string/button"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button2"
@@ -40,7 +41,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:backgroundTint="@color/orange_yellow"
-            android:text="@string/button2" />
+            android:text="@string/button2"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button3"
@@ -50,7 +52,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/blue"
-            android:text="@string/button3" />
+            android:text="@string/button3"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button4"
@@ -60,7 +63,8 @@
             android:layout_marginTop="200dp"
             android:backgroundTint="@color/green"
             android:text="@string/button4"
-            app:backgroundTint="@color/green" />
+            app:backgroundTint="@color/green"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button5"
@@ -69,7 +73,8 @@
             android:layout_alignBaseline="@id/button4"
             android:layout_centerInParent="true"
             android:backgroundTint="@color/purple_200"
-            android:text="@string/button5" />
+            android:text="@string/button5"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button6"
@@ -78,7 +83,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignBaseline="@id/button4"
             android:backgroundTint="@color/red"
-            android:text="@string/button6" />
+            android:text="@string/button6"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button7"
@@ -86,7 +92,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="300dp"
             android:backgroundTint="@color/orange"
-            android:text="@string/button7" />
+            android:text="@string/button7"
+            android:onClick="onClickBtn" />
 
         <Button
             android:id="@+id/button8"
@@ -95,7 +102,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/yellow"
-            android:text="@string/button8" />
+            android:text="@string/button8"
+            android:onClick="onClickBtn" />
 
     </RelativeLayout>
 
