@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tutorial">
+    package="com.cruelgeroi.apphub">
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/no_what"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/no_what_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tutorial">
 
         <activity
-            android:name="com.example.tutorial.activities.MainActivity"
+            android:name="com.cruelgeroi.apphub.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +21,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.DatabaseActivity"
+            android:name="com.cruelgeroi.apphub.activities.DatabaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".DatabaseActivity" />
@@ -32,11 +32,11 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.CreatedActivity"
+            android:name="com.cruelgeroi.apphub.activities.CreatedActivity"
             android:exported="false" />
 
         <activity
-            android:name="com.example.tutorial.activities.RecyclerActivity"
+            android:name="com.cruelgeroi.apphub.activities.RecyclerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".RecyclerActivity" />
@@ -46,7 +46,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.CalculatorActivity"
+            android:name="com.cruelgeroi.apphub.activities.CalculatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CalculatorActivity" />
@@ -56,7 +56,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.CircleActivity"
+            android:name="com.cruelgeroi.apphub.activities.CircleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CircleActivity" />
@@ -66,7 +66,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.DrawingActivity"
+            android:name="com.cruelgeroi.apphub.activities.DrawingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".DrawingActivity" />
@@ -76,7 +76,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.FragmentActivity"
+            android:name="com.cruelgeroi.apphub.activities.FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FragmentActivity" />
@@ -86,7 +86,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.SensorActivity"
+            android:name="com.cruelgeroi.apphub.activities.SensorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".SensorActivity" />
@@ -96,7 +96,7 @@
         </activity>
 
         <activity
-            android:name="com.example.tutorial.activities.FileActivity"
+            android:name="com.cruelgeroi.apphub.activities.FileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FileActivity" />
@@ -107,8 +107,8 @@
 
 
         <provider
-            android:name="com.example.tutorial.db.NotesProvider"
-            android:authorities="com.example.tutorial.provider"
+            android:name="com.cruelgeroi.apphub.db.NotesProvider"
+            android:authorities="com.cruelgeroi.apphub.provider"
             android:exported="false" />
     </application>
 

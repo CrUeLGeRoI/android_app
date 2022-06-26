@@ -11,12 +11,12 @@
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.tutorial.fragments.CatFragment"
+        android:name="com.cruelgeroi.apphub.fragments.CatFragment"
         android:id="@+id/cat_fragment"></fragment>
     <fragment
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:name="com.example.tutorial.fragments.BlankFragment"
+        android:name="com.cruelgeroi.apphub.fragments.BlankFragment"
         android:id="@+id/blank_fragment"></fragment>
 </LinearLayout>

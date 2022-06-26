@@ -2,7 +2,7 @@
 
     <!--    Main act-->
 
-    <string name="app_name">Colors</string>
+    <string name="app_name">AppHub</string>
     <string name="hello">Hello world!</string>
     <string name="button">File Act</string>
     <string name="button2">Sensor Act</string>
