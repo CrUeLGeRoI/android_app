@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:minHeight="48dp"
-            android:onClick="reset"
             android:text="@string/hello"
             android:textColor="#DA0606"
             android:textSize="15pt"

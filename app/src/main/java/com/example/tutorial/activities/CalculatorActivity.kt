@@ -5,12 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.tutorial.R
 import androidx.core.content.ContextCompat
 import android.text.TextUtils
 import android.util.Log
-import android.view.View
 import android.widget.*
+import com.example.tutorial.R
 
 class CalculatorActivity : AppCompatActivity() {
 

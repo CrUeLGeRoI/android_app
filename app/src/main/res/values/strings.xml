@@ -11,7 +11,7 @@
     <string name="button5">Circle Act</string>
     <string name="button6">Calc Act</string>
     <string name="button7">Recycle Act</string>
-    <string name="button8">8</string>
+    <string name="button8">Db Act</string>
 
     <!--    Cat frag-->
     <string name="hello_cat_fragment">Hello cat fragment!</string>

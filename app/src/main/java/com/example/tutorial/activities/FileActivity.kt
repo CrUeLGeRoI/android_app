@@ -4,11 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.example.tutorial.R
 import android.text.method.ScrollingMovementMethod
 import android.view.View
 import android.widget.*
-import com.example.tutorial.activities.FileActivity
+import com.example.tutorial.R
 import java.math.BigInteger
 
 class FileActivity : AppCompatActivity() {

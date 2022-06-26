@@ -4,14 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.widget.TextView
 import android.widget.LinearLayout
 import android.os.Bundle
-import com.example.tutorial.R
 import android.content.Intent
-import android.content.ContentResolver
-import android.content.ContentValues
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import com.example.tutorial.db.NotesContract
+import com.example.tutorial.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -28,106 +23,39 @@ class MainActivity : AppCompatActivity() {
         textView = findViewById(R.id.hello_world)
         currentLayout = findViewById(R.id.main_layout)
 
-        insert()
-        select()
-        //end
     }
 
     fun onClickBtn(v: View?) {
         when(v?.id){
             R.id.button -> {
-                mIntent = Intent(".FileActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".FileActivity")
             }
             R.id.button2 -> {
-                mIntent = Intent(".SensorActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".SensorActivity")
             }
             R.id.button3 -> {
-                mIntent = Intent(".FragmentActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".FragmentActivity")
             }
             R.id.button4 -> {
-                mIntent = Intent(".DrawingActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".DrawingActivity")
             }
             R.id.button5 -> {
-                mIntent = Intent(".CircleActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".CircleActivity")
             }
             R.id.button6 -> {
-                mIntent = Intent(".CalculatorActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".CalculatorActivity")
             }
             R.id.button7 -> {
-                mIntent = Intent(".RecyclerActivity")
-                startActivity(mIntent)
+                startSelectedActivity(".RecyclerActivity")
             }
             R.id.button8 -> {
-                textView!!.text = "8"
-                currentLayout?.setBackgroundResource(R.color.yellow)
+                startSelectedActivity(".DatabaseActivity")
             }
         }
     }
 
-    private fun insert() {
-        val contentResolver = contentResolver
-        val contentValues = ContentValues()
-        contentValues.put(NotesContract.Notes.COLUMN_TITLE, "Заголовок заметки")
-        contentValues.put(NotesContract.Notes.COLUMN_NOTE, "Текст заметки")
-        contentValues.put(NotesContract.Notes.COLUMN_CREATED_TS, System.currentTimeMillis())
-        contentValues.put(NotesContract.Notes.COLUMN_UPDATED_TS, System.currentTimeMillis())
-        val uri = contentResolver.insert(NotesContract.Notes.URI, contentValues)
-        Log.i("DATABASE", "URI: $uri")
+    private fun startSelectedActivity(selectedIntent: String){
+        mIntent = Intent(selectedIntent)
+        startActivity(mIntent)
     }
-
-    private fun select() {
-        val contentResolver = contentResolver
-        val cursor = contentResolver.query(
-                NotesContract.Notes.URI,  // URI
-                NotesContract.Notes.LIST_PROJECTION,  // Столбцы
-                null,  // Параметры выборки
-                null,  // Аргументы выборки
-                null // Сортировка по умолчанию
-        )
-        Log.i("DATABASE", "Count: " + cursor!!.count)
-        cursor.close()
-    }
-
-    fun reset(view: View?) {
-        currentLayout = findViewById<View>(R.id.main_layout) as LinearLayout
-        textView!!.setText(R.string.hello)
-        Log.i("Hello_world", "Hello pressed")
-        currentLayout!!.setBackgroundResource(R.color.white)
-    }
-
-    override fun onStart() {
-        super.onStart()
-        Log.i("LifeActivity###", "onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.i("LifeActivity###", "onResume")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.i("LifeActivity###", "onStop")
-        textView!!.text = "World!!!!!!!!"
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.i("LifeActivity###", "onRestart")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.i("LifeActivity###", "OnCreate")
-    }
-
-
-
-
 }

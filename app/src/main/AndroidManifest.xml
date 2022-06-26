@@ -11,11 +11,32 @@
         android:theme="@style/Theme.Tutorial">
 
         <activity
-            android:name=".activities.CreatedActivity"
+            android:name="com.example.tutorial.activities.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.tutorial.activities.DatabaseActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".DatabaseActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.example.tutorial.activities.CreatedActivity"
             android:exported="false" />
 
         <activity
-            android:name=".activities.RecyclerActivity"
+            android:name="com.example.tutorial.activities.RecyclerActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".RecyclerActivity" />
@@ -25,7 +46,7 @@
         </activity>
 
         <activity
-            android:name=".activities.CalculatorActivity"
+            android:name="com.example.tutorial.activities.CalculatorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CalculatorActivity" />
@@ -35,7 +56,7 @@
         </activity>
 
         <activity
-            android:name=".activities.CircleActivity"
+            android:name="com.example.tutorial.activities.CircleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".CircleActivity" />
@@ -45,7 +66,7 @@
         </activity>
 
         <activity
-            android:name=".activities.DrawingActivity"
+            android:name="com.example.tutorial.activities.DrawingActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".DrawingActivity" />
@@ -55,7 +76,7 @@
         </activity>
 
         <activity
-            android:name=".activities.FragmentActivity"
+            android:name="com.example.tutorial.activities.FragmentActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FragmentActivity" />
@@ -65,7 +86,7 @@
         </activity>
 
         <activity
-            android:name=".activities.SensorActivity"
+            android:name="com.example.tutorial.activities.SensorActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".SensorActivity" />
@@ -75,7 +96,7 @@
         </activity>
 
         <activity
-            android:name=".activities.FileActivity"
+            android:name="com.example.tutorial.activities.FileActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name=".FileActivity" />
@@ -84,23 +105,11 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".activities.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <provider
-            android:name=".db.NotesProvider"
+            android:name="com.example.tutorial.db.NotesProvider"
             android:authorities="com.example.tutorial.provider"
             android:exported="false" />
-
-
-
     </application>
 
 </manifest>
