@@ -3,7 +3,6 @@ package com.example.tutorial
 import android.os.Parcelable
 import android.os.Parcel
 import android.os.Parcelable.Creator
-import com.example.tutorial.ColorsOfRainbow
 
 class ColorsOfRainbow : Parcelable {
     var number: Short

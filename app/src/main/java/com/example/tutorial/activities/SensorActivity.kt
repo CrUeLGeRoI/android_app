@@ -8,9 +8,9 @@ import android.hardware.SensorManager
 import android.widget.TextView
 import android.widget.RelativeLayout
 import android.os.Bundle
-import com.example.tutorial.R
 import android.hardware.SensorEvent
 import android.util.Log
+import com.example.tutorial.R
 
 class SensorActivity : AppCompatActivity(), SensorEventListener {
     private var sensorManager: SensorManager? = null

@@ -2,11 +2,9 @@ package com.example.tutorial.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.tutorial.R
-import android.content.Intent
 import android.util.Log
 import android.widget.RelativeLayout
-import com.example.tutorial.activities.CreatedActivity
+import com.example.tutorial.R
 
 class CreatedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

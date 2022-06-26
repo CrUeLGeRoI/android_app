@@ -6,7 +6,6 @@ import com.example.tutorial.ColorsOfRainbow
 import androidx.recyclerview.widget.RecyclerView
 import android.widget.TextView
 import android.os.Bundle
-import com.example.tutorial.R
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tutorial.ui.ColorsOfRainbowAdapter
@@ -14,7 +13,7 @@ import androidx.recyclerview.widget.DefaultItemAnimator
 import android.content.ContentValues
 import android.content.Intent
 import android.util.Log
-import com.example.tutorial.activities.CreatedActivity
+import com.example.tutorial.R
 import java.util.ArrayList
 
 class RecyclerActivity : AppCompatActivity(), OnAdapterClickListener {

@@ -9,8 +9,6 @@ import android.graphics.RectF;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import java.util.ArrayList;
-
 public class DrawView extends View {
     Paint paint;
     Rect rect1, rect2;

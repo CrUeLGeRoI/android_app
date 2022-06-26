@@ -1,7 +1,6 @@
 package com.example.tutorial.ui
 
 import com.example.tutorial.ColorsOfRainbow
-import com.example.tutorial.ui.ColorsOfRainbowAdapter.OnAdapterClickListener
 import androidx.recyclerview.widget.RecyclerView
 import com.example.tutorial.ui.ColorsOfRainbowAdapter.MyViewHolder
 import android.view.ViewGroup
