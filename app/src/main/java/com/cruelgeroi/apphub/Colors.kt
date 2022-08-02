@@ -4,7 +4,7 @@ import android.os.Parcelable
 import android.os.Parcel
 import android.os.Parcelable.Creator
 
-class ColorsOfRainbow : Parcelable {
+class Colors : Parcelable {
     var number: Short
     var colorName: String?
     var color: Int
@@ -43,11 +43,11 @@ class ColorsOfRainbow : Parcelable {
     companion object {
         @JvmField
         val CREATOR: Creator<*> = object : Creator<Any?> {
-            override fun createFromParcel(`in`: Parcel): ColorsOfRainbow? {
-                return ColorsOfRainbow(`in`)
+            override fun createFromParcel(`in`: Parcel): Colors? {
+                return Colors(`in`)
             }
 
-            override fun newArray(size: Int): Array<ColorsOfRainbow?> {
+            override fun newArray(size: Int): Array<Colors?> {
                 return arrayOfNulls(size)
             }
         }
