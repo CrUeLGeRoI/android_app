@@ -15,4 +15,14 @@
     <color name="red">#FA3465</color>
     <color name="grey">#d3d3d3</color>
     <color name="purple">#6a0dad</color>
+
+<!--    Colors for light theme-->
+    <color name="lightThemePrimaryColor">#ffd600</color>
+    <color name="lightThemePrimaryLightColor">#ffff52</color>
+    <color name="lightThemePrimaryDarkColor">#c7a500</color>
+    <color name="lightThemeSecondaryColor">#ffa726</color>
+    <color name="lightThemeSecondaryLightColor">#ffd95b</color>
+    <color name="lightThemeSecondaryDarkColor">#c77800</color>
+    <color name="lightThemePrimaryTextColor">#000000</color>
+    <color name="lightThemeSecondaryTextColor">#000</color>
 </resources>

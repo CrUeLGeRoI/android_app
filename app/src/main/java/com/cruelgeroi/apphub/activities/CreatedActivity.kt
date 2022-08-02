@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.RelativeLayout
 import com.cruelgeroi.apphub.R
-
+/**
+ * Activity created by clicking on items in RecyclerActivity
+ */
 class CreatedActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,10 +19,5 @@ class CreatedActivity : AppCompatActivity() {
             val color = bundle.getInt("COLOR_OF_ELEMENT")
             layout.setBackgroundColor(color)
         }
-        Log.d(TAG, "onCreate: created")
-    }
-
-    companion object {
-        private const val TAG = "CreatedActivity"
     }
 }
