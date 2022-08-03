@@ -6,12 +6,11 @@ import android.widget.LinearLayout
 import android.os.Bundle
 import android.content.Intent
 import android.view.View
+import android.widget.Toolbar
 import com.cruelgeroi.apphub.R
 
 class MainActivity : AppCompatActivity() {
 
-    private var textView: TextView? = null
-    private var currentLayout: LinearLayout? = null
     private var mIntent:Intent? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,10 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //Initializing
-
-        textView = findViewById(R.id.hello_world)
-        currentLayout = findViewById(R.id.main_layout)
-
+        var toolbar:androidx.appcompat.widget.Toolbar? = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
     }
 
     fun onClickBtn(v: View?) {

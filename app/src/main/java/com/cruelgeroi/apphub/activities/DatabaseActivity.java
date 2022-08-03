@@ -41,18 +41,14 @@ public class DatabaseActivity extends AppCompatActivity implements LoaderManager
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
-                layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
-
         notesAdapter = new NotesAdapter(null);
         recyclerView.setAdapter(notesAdapter);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        insert();
-        select();
+//        insert();
+//        select();
     }
 
 
