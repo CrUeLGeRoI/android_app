@@ -11,7 +11,7 @@ import com.cruelgeroi.apphub.R
 
 class MainActivity : AppCompatActivity() {
 
-    private var mIntent:Intent? = null
+    private lateinit var mIntent:Intent
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

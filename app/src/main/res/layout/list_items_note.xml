@@ -24,7 +24,8 @@
                     android:layout_height="wrap_content"
                     android:text="Test title"
                     android:textSize="23sp"
-                    android:textColor="@color/lightThemePrimaryTextColor"
+                    android:textStyle="bold"
+                    android:textColor="@color/textColorPrimary"
                     android:fontFamily="sans-serif-light"
                     android:layout_marginBottom="20dp"
                     android:layout_marginTop="8dp"
@@ -37,6 +38,8 @@
                     android:layout_height="wrap_content"
                     android:text="Test date"
                     android:textSize="14sp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="@color/textColorSecondary"
                     android:layout_marginLeft="8dp"
                     android:layout_marginBottom="8dp"
                     />

@@ -1,6 +1,8 @@
 package com.cruelgeroi.apphub.ui;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cruelgeroi.apphub.R;
@@ -23,21 +26,6 @@ public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder>
         super(cursor);
     }
 
-    @Override
-    public void onBindViewHolder(NotesAdapter.ViewHolder viewHolder, Cursor cursor) {
-
-        int titleColumnIndex = cursor.getColumnIndexOrThrow(NotesContract.Notes.COLUMN_TITLE);
-        String title = cursor.getString(titleColumnIndex);
-
-        viewHolder.titleTv.setText(title);
-
-        int dateColumnIndex = cursor.getColumnIndexOrThrow(NotesContract.Notes.COLUMN_UPDATED_TS);
-        long updatedTs = cursor.getLong(dateColumnIndex);
-        Date date = new Date(updatedTs);
-
-        viewHolder.dateTv.setText(viewHolder.SDF.format(date));
-    }
-
     @NonNull
     @Override
     public NotesAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -45,6 +33,25 @@ public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder>
         View view = layoutInflater.inflate(R.layout.list_items_note, parent, false);
 
         return new ViewHolder(view);
+    }
+
+    @SuppressLint("ResourceAsColor")
+    @Override
+    public void onBindViewHolder(NotesAdapter.ViewHolder viewHolder, Cursor cursor) {
+
+        int titleColumnIndex = cursor.getColumnIndexOrThrow(NotesContract.Notes.COLUMN_TITLE);
+        String title = cursor.getString(titleColumnIndex);
+
+        viewHolder.titleTv.setText(title);
+//        viewHolder.titleTv.setTextColor(ContextCompat.getColor(viewHolder.titleTv.getContext(), R.color.textColorPrimary));
+//        Log.i("###########", String.valueOf(R.color.textColorPrimary));
+
+        int dateColumnIndex = cursor.getColumnIndexOrThrow(NotesContract.Notes.COLUMN_UPDATED_TS);
+        long updatedTs = cursor.getLong(dateColumnIndex);
+        Date date = new Date(updatedTs);
+
+        viewHolder.dateTv.setText(viewHolder.SDF.format(date));
+//        viewHolder.dateTv.setTextColor(ContextCompat.getColor(viewHolder.dateTv.getContext(), R.color.textColorSecondary));
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/no_what_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity
+            android:name="com.cruelgeroi.apphub.activities.CreatedNotesActivity"
+            android:exported="false" />
         <activity
             android:name="com.cruelgeroi.apphub.activities.MainActivity"
             android:exported="true">
@@ -19,7 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.DatabaseActivity"
             android:exported="true">
@@ -28,13 +29,10 @@
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-
         </activity>
-
         <activity
-            android:name="com.cruelgeroi.apphub.activities.CreatedActivity"
+            android:name="com.cruelgeroi.apphub.activities.CreatedRecyclerActivity"
             android:exported="false" />
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.RecyclerActivity"
             android:exported="true">
@@ -44,7 +42,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.CalculatorActivity"
             android:exported="true">
@@ -54,7 +51,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.CircleActivity"
             android:exported="true">
@@ -64,7 +60,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.DrawingActivity"
             android:exported="true">
@@ -74,7 +69,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.FragmentActivity"
             android:exported="true">
@@ -84,7 +78,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.SensorActivity"
             android:exported="true">
@@ -94,7 +87,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity
             android:name="com.cruelgeroi.apphub.activities.FileActivity"
             android:exported="true">
@@ -104,7 +96,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
 
         <provider
             android:name="com.cruelgeroi.apphub.db.NotesProvider"

@@ -45,7 +45,7 @@ class RecyclerActivity : AppCompatActivity(), OnAdapterClickListener {
             ContextCompat.getColor(this, R.color.green),
             ContextCompat.getColor(this, R.color.grey),
             ContextCompat.getColor(this, R.color.purple),
-            ContextCompat.getColor(this, R.color.teal_700),
+            ContextCompat.getColor(this, R.color.teal),
             ContextCompat.getColor(this, R.color.white)
         )
 
@@ -68,7 +68,7 @@ class RecyclerActivity : AppCompatActivity(), OnAdapterClickListener {
 
     override fun onAdapterClick(position: Int) {
         Log.d(ContentValues.TAG, "onAdapterClick: clicked")
-        val intent = Intent(this, CreatedActivity::class.java)
+        val intent = Intent(this, CreatedRecyclerActivity::class.java)
         intent.putExtra("COLOR_OF_ELEMENT", colorsArrayList!![position].color)
         startActivity(intent)
     }

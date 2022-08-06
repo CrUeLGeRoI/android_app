@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="yellow">#FFEA1F</color>
@@ -16,14 +11,18 @@
     <color name="grey">#d3d3d3</color>
     <color name="purple">#6a0dad</color>
     <color name="light_grey">#d3d3d3</color>
+    <color name="dark_grey">#404040</color>
+    <color name="teal">#03f6f9</color>
 
-<!--    Colors for light theme-->
-    <color name="lightThemePrimaryColor">#ffd600</color>
-    <color name="lightThemePrimaryLightColor">#ffff52</color>
-    <color name="lightThemePrimaryDarkColor">#c7a500</color>
-    <color name="lightThemeSecondaryColor">#ffa726</color>
-    <color name="lightThemeSecondaryLightColor">#ffd95b</color>
-    <color name="lightThemeSecondaryDarkColor">#c77800</color>
-    <color name="lightThemePrimaryTextColor">#000000</color>
-    <color name="lightThemeSecondaryTextColor">#000</color>
+
+    <!--    Colors for light theme-->
+    <color name="colorPrimary">#ffd600</color>
+    <color name="colorPrimaryLight">#ffff52</color>
+    <color name="colorPrimaryDark">#c7a500</color>
+    <color name="colorSecondary">#ffa726</color>
+    <color name="colorSecondaryLight">#ffd95b</color>
+    <color name="colorSecondaryDark">#c77800</color>
+    <color name="textColorPrimary">@color/black</color>
+    <color name="textColorSecondary">@color/light_grey</color>
+
 </resources>
