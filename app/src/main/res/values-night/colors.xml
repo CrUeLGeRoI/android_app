@@ -12,17 +12,16 @@
     <color name="purple">#6a0dad</color>
     <color name="light_grey">#d3d3d3</color>
     <color name="dark_grey">#404040</color>
-    <color name="teal">#03f6f9</color>
 
 
     <!--    Colors for light theme-->
-    <color name="colorPrimary">#ffd600</color>
+    <color name="colorPrimary">@color/black</color>
     <color name="colorPrimaryLight">#ffff52</color>
-    <color name="colorPrimaryDark">#c7a500</color>
+    <color name="colorPrimaryDark">@color/dark_grey</color>
     <color name="colorSecondary">#ffa726</color>
     <color name="colorSecondaryLight">#ffd95b</color>
     <color name="colorSecondaryDark">#c77800</color>
-    <color name="textColorPrimary">@color/black</color>
+    <color name="textColorPrimary">@color/white</color>
     <color name="textColorSecondary">@color/light_grey</color>
 
 </resources>

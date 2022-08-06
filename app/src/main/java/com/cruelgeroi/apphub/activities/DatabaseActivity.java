@@ -2,10 +2,13 @@ package com.cruelgeroi.apphub.activities;
 
 import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,10 +23,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.cruelgeroi.apphub.db.NotesContract;
 import com.cruelgeroi.apphub.R;
 import com.cruelgeroi.apphub.ui.NotesAdapter;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class DatabaseActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     private NotesAdapter notesAdapter;
+    private FloatingActionButton floatingActionButton;
 
 
     @Override
@@ -41,18 +46,23 @@ public class DatabaseActivity extends AppCompatActivity implements LoaderManager
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(this,
-                layoutManager.getOrientation());
-        recyclerView.addItemDecoration(dividerItemDecoration);
-
         notesAdapter = new NotesAdapter(null);
         recyclerView.setAdapter(notesAdapter);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        insert();
-        select();
+        floatingActionButton = findViewById(R.id.create_fab);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DatabaseActivity.this, CreatedNotesActivity.class);
+                startActivity(intent);
+            }
+        });
+
+//        insert();
+//        select();
     }
 
 
