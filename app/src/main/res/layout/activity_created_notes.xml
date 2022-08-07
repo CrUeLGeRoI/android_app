@@ -13,4 +13,54 @@
         <include layout="@layout/toolbar"/>
     </com.google.android.material.appbar.AppBarLayout>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_created_notes_til_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/activity_created_notes_text_input_hint_1"
+            app:expandedHintEnabled="false"
+            android:theme="@style/TextLabel"
+            >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:id="@+id/activity_created_notes_et_1"
+                    android:ems="5"
+                    android:inputType="text|textCapSentences"
+                    android:maxLines="1"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/activity_created_notes_til_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/TextLabel"
+            android:layout_below="@id/activity_created_notes_til_1"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="10dp"
+            android:hint="@string/activity_created_notes_text_input_hint_2"
+            app:expandedHintEnabled="false">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_created_notes_et_2"
+                android:minHeight="48dp"
+                android:ems="5"
+                android:gravity="start|top"
+                android:inputType="textMultiLine|textCapSentences"
+                android:maxLines="100" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

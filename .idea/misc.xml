@@ -11,7 +11,7 @@
         <entry key="..\:/Github/android_app/app/src/main/res/drawable/item_note_border.xml" value="0.1925" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_calculator.xml" value="0.33" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_created.xml" value="0.3383152173913043" />
-        <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_created_notes.xml" value="0.3625" />
+        <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_created_notes.xml" value="0.44989339019189767" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_created_recycler.xml" value="0.33" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_database.xml" value="0.3383152173913043" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/activity_file.xml" value="0.22418478260869565" />
@@ -21,7 +21,8 @@
         <entry key="..\:/Github/android_app/app/src/main/res/layout/fragment_cat.xml" value="0.25" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/list_items.xml" value="0.33" />
         <entry key="..\:/Github/android_app/app/src/main/res/layout/list_items_note.xml" value="0.3383152173913043" />
-        <entry key="..\:/Github/android_app/app/src/main/res/layout/toolbar.xml" value="0.184375" />
+        <entry key="..\:/Github/android_app/app/src/main/res/layout/toolbar.xml" value="0.5" />
+        <entry key="..\:/Github/android_app/app/src/main/res/menu/menu_created_activity_notes.xml" value="0.3614583333333333" />
         <entry key="..\:/Github/android_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2525" />
         <entry key="..\:/Github/android_app/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2525" />
       </map>
