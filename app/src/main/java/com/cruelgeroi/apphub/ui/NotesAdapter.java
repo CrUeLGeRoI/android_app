@@ -43,15 +43,12 @@ public class NotesAdapter extends CursorRecyclerAdapter<NotesAdapter.ViewHolder>
         String title = cursor.getString(titleColumnIndex);
 
         viewHolder.titleTv.setText(title);
-//        viewHolder.titleTv.setTextColor(ContextCompat.getColor(viewHolder.titleTv.getContext(), R.color.textColorPrimary));
-//        Log.i("###########", String.valueOf(R.color.textColorPrimary));
 
         int dateColumnIndex = cursor.getColumnIndexOrThrow(NotesContract.Notes.COLUMN_UPDATED_TS);
         long updatedTs = cursor.getLong(dateColumnIndex);
         Date date = new Date(updatedTs);
 
         viewHolder.dateTv.setText(viewHolder.SDF.format(date));
-//        viewHolder.dateTv.setTextColor(ContextCompat.getColor(viewHolder.dateTv.getContext(), R.color.textColorSecondary));
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{

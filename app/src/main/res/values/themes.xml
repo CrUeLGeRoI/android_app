@@ -30,4 +30,17 @@
         <item name="android:layout_height">1dp</item> // You can change thickness here.
     </style>
 
+    <style name="TextLabel" parent="TextAppearance.AppCompat">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/grey</item>
+        <!-- Color when activated -->
+        <item name="colorAccent">?attr/colorSecondary</item>
+        <!-- Text size -->
+        <item name="android:textSize">18sp</item>
+        <item name="android:ems">5</item>
+        <!-- Color when highlighting text -->
+        <item name="android:textColorHighlight">@color/colorPrimary</item>
+        <item name="android:textColorLink">?attr/colorPrimaryVariant</item>
+    </style>
+
 </resources>

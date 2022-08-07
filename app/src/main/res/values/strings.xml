@@ -1,8 +1,8 @@
 <resources>
+    <string name="app_name">AppHub</string>
 
     <!--    Main act-->
 
-    <string name="app_name">AppHub</string>
     <string name="hello">Hello world!</string>
     <string name="button">File Act</string>
     <string name="button2">Sensor Act</string>
@@ -28,4 +28,10 @@
     <string name="minus">-</string>
     <string name="divide">/</string>
     <string name="multiply">*</string>
+
+
+    <string name="activity_created_notes_text_input_hint_1">Заголовок заметки</string>
+    <string name="activity_created_notes_text_input_hint_2">Текст заметки</string>
+    <string name="title_save">Сохранить</string>
+    <string name="error_null">В поле ничего не введено.</string>
 </resources>
