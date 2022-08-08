@@ -12,12 +12,11 @@ import android.view.MenuItem;
 
 import com.cruelgeroi.apphub.R;
 import com.cruelgeroi.apphub.db.NotesContract;
+import com.cruelgeroi.apphub.ui.NotesAdapter;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
-import java.util.Locale;
-
-public class CreatedNotesActivity extends AppCompatActivity {
+public class CreateNotesActivity extends AppCompatActivity implements NotesAdapter.OnNotesAdapterCLickListener {
 
     private TextInputLayout titleTil;
     private TextInputLayout textTil;
@@ -28,7 +27,7 @@ public class CreatedNotesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_created_notes);
+        setContentView(R.layout.activity_create_notes);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -45,7 +44,7 @@ public class CreatedNotesActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_created_activity_notes, menu);
+        getMenuInflater().inflate(R.menu.menu_activity_create_notes, menu);
         return true;
     }
 
@@ -96,5 +95,10 @@ public class CreatedNotesActivity extends AppCompatActivity {
             getContentResolver().insert(NotesContract.Notes.URI, contentValues);
             finish();
         }
+    }
+
+    @Override
+    public void onClick(int position) {
+
     }
 }
