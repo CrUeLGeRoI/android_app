@@ -23,6 +23,6 @@
     <color name="colorSecondaryLight">#ffd95b</color>
     <color name="colorSecondaryDark">#c77800</color>
     <color name="textColorPrimary">@color/black</color>
-    <color name="textColorSecondary">@color/light_grey</color>
+    <color name="textColorSecondary">@color/black</color>
 
 </resources>

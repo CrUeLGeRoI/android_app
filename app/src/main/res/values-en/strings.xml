@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_created_notes_text_input_hint_1">Note title</string>
+    <string name="activity_created_notes_text_input_hint_2">Note text</string>
+    <string name="title_save">Save</string>
+    <string name="error_null">There is nothing here</string>
+    <string name="first_num">First number</string>
+    <string name="dialog_negative_button_text">Back</string>
+    <string name="secret_dialog_title">Enter password</string>
+    <string name="secret_password">123456</string>
+</resources>

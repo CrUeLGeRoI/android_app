@@ -9,9 +9,7 @@
         android:roundIcon="@mipmap/no_what_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name="com.cruelgeroi.apphub.activities.CreatedNotesActivity"
-            android:exported="false" />
+
         <activity
             android:name="com.cruelgeroi.apphub.activities.MainActivity"
             android:exported="true">
@@ -21,6 +19,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.cruelgeroi.apphub.activities.CreateNotesActivity"
+            android:exported="false" />
         <activity
             android:name="com.cruelgeroi.apphub.activities.DatabaseActivity"
             android:exported="true">
@@ -92,6 +93,16 @@
             android:exported="true">
             <intent-filter>
                 <action android:name=".FileActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.cruelgeroi.apphub.activities.SecretActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name=".SecretActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

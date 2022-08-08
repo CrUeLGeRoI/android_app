@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
     </style>
 
     <style name="Toolbar" parent="AppTheme">
@@ -43,4 +44,7 @@
         <item name="android:textColorLink">?attr/colorPrimaryVariant</item>
     </style>
 
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/colorSecondary</item>
+    </style>
 </resources>
