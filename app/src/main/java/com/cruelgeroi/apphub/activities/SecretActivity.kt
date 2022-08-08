@@ -4,12 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import com.cruelgeroi.apphub.R
 
 class SecretActivity : AppCompatActivity() {
+
+    private lateinit var mImageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_secret)
+
+        mImageView = findViewById(R.id.secret_iv)
+        mImageView.setImageResource(R.drawable.secret_photo)
 
         val toolbar:androidx.appcompat.widget.Toolbar? = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
