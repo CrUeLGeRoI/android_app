@@ -38,8 +38,6 @@ public class CreateNotesActivity extends AppCompatActivity implements NotesAdapt
         titleEt = findViewById(R.id.activity_created_notes_et_1);
         textEt = findViewById(R.id.activity_created_notes_et_2);
 
-
-
     }
 
     @Override
